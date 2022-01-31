@@ -5,7 +5,8 @@ export const CardView = styled.div`
     display: flex;
     flex-direction: column;
 
-    width: 110px;
+    min-width: 110px;
+    max-width: 110px;
 
     p {
         margin: 0px 0px;
@@ -16,10 +17,16 @@ export const CardView = styled.div`
         line-height: 17px;
     }
 
-    span {
-        font-weight: 500;
-        font-size: 8px;
+    div {
+        height: 2.8em;
+        overflow: hidden;
+
+        span {
+            font-weight: 500;
+            font-size: 8px;
+        }
     }
+
 
     #type {
         width: 6em;
@@ -33,6 +40,10 @@ export const CardView = styled.div`
         font-size: 11px;
         
         z-index: 1;
+
+        color: white;
+
+        padding-left: 2px;
     }
 
     footer {

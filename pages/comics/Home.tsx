@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import Card from '../../src/components/card/Card';
-import { api } from '../../src/services/api';
+import { api } from '../../src/infra/services/api';
 
 import Image from 'next/image'
+
+import ComicsLayout from '../../src/layouts/comics/ComicsLayout';
 
 export default function Home() {
     const [catalog, setCatalog] = useState([])
@@ -18,10 +20,10 @@ export default function Home() {
     console.log(catalog);
 
     return (
-        <div>
+        <ComicsLayout>
             {
                 catalog.map(value => <Card key={value.id} image={value.thumbnail.path} type={value.type} title={value.title} creators={value.creators.items.map(value => (value.name))}/> )
             }
-        </div>
+        </ComicsLayout>
     );
 }
