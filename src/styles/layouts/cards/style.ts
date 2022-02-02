@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ComicsView = styled.main`
+    padding: 5em;
+
     h3 {
         /* border-bottom: 1px; */
         border-bottom-color: red;
@@ -14,7 +16,5 @@ export const ComicsView = styled.main`
         flex-wrap: wrap;
         
         justify-content: space-evenly;
-        
-        padding: 5em;
     }
 `;

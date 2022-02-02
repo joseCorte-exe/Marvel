@@ -5,14 +5,14 @@ export const CardView = styled.div`
     display: flex;
     flex-direction: column;
 
-    min-width: 110px;
-    max-width: 110px;
+    /* min-width: 110px; */
+    max-width: 165px;
 
     p {
         margin: 0px 0px;
         
         font-weight: 1000;
-        font-size: 8px;
+        font-size: 12px;
         font-family: 'Roboto', sans-serif;
         line-height: 17px;
     }
@@ -23,7 +23,7 @@ export const CardView = styled.div`
 
         span {
             font-weight: 500;
-            font-size: 8px;
+            font-size: 10px;
         }
     }
 

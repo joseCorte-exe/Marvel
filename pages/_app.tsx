@@ -1,9 +1,17 @@
-import '../styles/globals.css'
+import '../src/styles/globals.css'
 import { AppProps } from 'next/app';
 
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp

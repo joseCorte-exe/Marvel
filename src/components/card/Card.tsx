@@ -4,12 +4,16 @@ import Image from 'next/image';
 import { title } from 'process';
 
 import { CardView } from './style.ts'
+import Link from 'next/link';
 
-export default function Card({image, type, title, creators}) {
+export default function Card({image, type, title, creators, id}) {
     return (
         <CardView>
-            <p id='type' >{type? type : "standart"}</p>
-            <Image src={`${image}.jpg`} alt="" width={115} height={160} />
+                <p id='type' >{type? type : "standart"}</p>
+            <Link href={`/comics/${id}`}  >
+                <Image src={`${image}.jpg`} alt="" width={165} height={210} layout='fixed' />
+                {/* <Image src={image} alt="" width={165} height={210} layout='fixed'/> */}
+            </Link>
             <footer>
                 <p>{title}</p>
                 <div>
