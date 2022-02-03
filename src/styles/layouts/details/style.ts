@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DetailsView = styled.main`
+export const DetailsView = styled.div`
     display: flex;
 
     max-width: 100%;
@@ -24,7 +24,7 @@ export const DetailsView = styled.main`
             justify-content: center;
             align-items: center;
 
-            width: 98.9vw;
+            width: 100vw;
     
             padding-top: 3em;
     
@@ -43,7 +43,7 @@ export const DetailsView = styled.main`
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 1fr;
 
-        padding-inline: 10em;
+        /* padding-inline: 10em; */
 
         grid-gap: 4em;
 

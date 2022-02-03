@@ -24,13 +24,16 @@ export const HeaderView = styled.header`
         list-style: none;
 
         font-size: 16px;
+
+
         a {
             margin-inline: 1em;
 
             font-weight: 500;
 
             text-decoration: none;
-            color: white;
+
+            color: white !important
         }
     }
 
@@ -52,6 +55,15 @@ export const HeaderView = styled.header`
         }
         img {
             border-radius: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding-top: 1em;
+        height: 6em;
+        section {
+            display: none;
         }
     }
 `;

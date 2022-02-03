@@ -43,42 +43,44 @@ Id.getInitialProps = async function ({req, query: {id}}) {
 
 export default function Id({ characters, details }) {
     return (
-        <DetailsView>
+            <>
             <Header />
-            <header id='header' >
-                <div>
-                    <Image src={details.thumbnail? `${details.thumbnail}.jpg` : '/images/Marvel_Logo.svg'} width={165} height={210} layout='fixed'/>
-                    <h3>{`${details.title} #${details.id}`}</h3>
-                </div>
-            </header>
-
-            <main>
-                <section id='top'>
-
-                    <h4>Description</h4>
-                    <p>{details.description=="#N/A"? 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores excepturi, ducimus alias animi aliquid blanditiis ullam eos pariatur sequi soluta iure, mollitia, sed repellendus? Ducimus hic voluptatem magni iure eos?' : details.description }</p>
-
-                    <article>
-                        <h4>Characters</h4>
-                        {
-                            characters[0]==undefined? <p>Characters not avaliable</p> : characters.map(value =>  <Card key={value.id} id={value.id} image={value.thumbnail.path}
-                                type={'character'} title={''}
-                                creators={''} /> )
-                        }
-                    </article>
-
+            <DetailsView>
+                <section id='header' >
+                    <div>
+                        <Image src={details.thumbnail? `${details.thumbnail}.jpg` : '/images/Marvel_Logo.svg'} width={165} height={210} layout='fixed'/>
+                        <h3>{`${details.title} #${details.id}`}</h3>
+                    </div>
                 </section>
 
-                <section id='bottom'>
-                <h4>Criadores: </h4>
-                        {
-                            details.creators[0]==undefined? <span>Creators not avaliable</span>  : details.creators.map(value => (<span key={value} >{`${value}, `}</span>))
-                        }
-                </section>
+                <main>
+                    <section id='top'>
 
-                <section>
-                </section>
-            </main>
-        </DetailsView>
+                        <h4>Description</h4>
+                        <p>{details.description=="#N/A"? 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores excepturi, ducimus alias animi aliquid blanditiis ullam eos pariatur sequi soluta iure, mollitia, sed repellendus? Ducimus hic voluptatem magni iure eos?' : details.description }</p>
+
+                        <article>
+                            <h4>Characters</h4>
+                            {
+                                characters[0]==undefined? <p>Characters not avaliable</p> : characters.map(value =>  <Card key={value.id} id={value.id} image={value.thumbnail.path}
+                                    type={'character'} title={''}
+                                    creators={''} /> )
+                            }
+                        </article>
+
+                    </section>
+
+                    <section id='bottom'>
+                    <h4>Criadores: </h4>
+                            {
+                                details.creators[0]==undefined? <span>Creators not avaliable</span>  : details.creators.map(value => (<span key={value} >{`${value}, `}</span>))
+                            }
+                    </section>
+
+                    <section>
+                    </section>
+                </main>
+            </DetailsView>
+        </>
     )
 }
