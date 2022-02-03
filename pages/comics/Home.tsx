@@ -4,21 +4,25 @@ import { api } from '../../src/infra/services/api';
 
 import { ComicsView } from '../../src/styles/layouts/cards/style';
 
-import ComicsLayout from '../../src/styles/layouts/card/style.ts';
 import Header from '../../src/components/header/Header';
 
-export default function Home() {
-    const [catalog, setCatalog] = useState([])
+Home.getInitialProps = async function ({req, query: {id}}) {
+    
+    let catalog = [];
 
-    useEffect(() => {
-        api.get('comics?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3')
-        .then(res => (setCatalog(res.data.data.results)))
+    await api.get('comics?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3')
+        .then(res => catalog = res.data.data.results)
         .catch(err => (
             console.log(err)
-        ))
+    ));
 
-    }, [])
+    return {
+        catalog: catalog
+    };
+}
 
+export default function Home({catalog}) {
+    console.log(catalog);
     return (
         <>
             <Header />

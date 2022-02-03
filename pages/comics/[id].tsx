@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { useRouter } from 'next/router'
 import Image from 'next/image';
 
 import { api } from '../../src/infra/services/api';
@@ -9,56 +8,40 @@ import Header from '../../src/components/header/Header';
 import { DetailsView } from '../../src/styles/layouts/details/style';
 import Card from '../../src/components/card/Card';
 
-export default function page() {
-    const router = useRouter();
-    const { id } = router.query;
+Id.getInitialProps = async function ({req, query: {id}}) {
 
-    const [details, setDetails] = useState({
-        id: "",
-        title: "",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod autem, odio doloribus amet, eum in deserunt a ipsa, velit sunt nemo animi fuga iure vitae consequatur dolorem molestias rem.",
-        thumbnail: "",
-        creators: [],
-        characters: ""
-    })
+    let details = {};
+    let characters = [];
 
-    const [characters, setCharacters] = useState([])
-
-    const loadDetails = async () => {
-
-        try {
-            await api.get(`comics/${id}?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3`)
-            .then(res => setDetails({
+    try {
+        await api.get(`comics/${id}?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3`)
+            .then(res => details = {
                 id: res.data.data.results[0].id,
                 title: res.data.data.results[0].title,
                 description: res.data.data.results[0].description? res.data.data.results[0].description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod autem, odio doloribus amet, eum in deserunt a ipsa, velit sunt nemo animi fuga iure vitae consequatur dolorem molestias rem.",
                 thumbnail: res.data.data.results[0].thumbnail.path,
                 creators: res.data.data.results[0].creators.items.map(value => (value.name)),
                 characters: res.data.data.results[0].characters.collectionURI
-            }))
-        .catch(err => (
-            console.log(err)
-        ))
-
-        await api.get(`comics/${page}/characters?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3`)
-            .then(res => setCharacters(res.data.data.results))
+            })
             .catch(err => (
                 console.log(err)
             ))
 
-    
-        } catch(err) {
-            // TODO
-            // adicionar tratamento da exceção
-            console.error(err);
-        }
+        await api.get(`comics/${id}/characters?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3`)
+            .then(res => characters = res.data.data.results)
+            .catch(err => (
+                console.log(err)
+        ))} catch(err) {
+        console.error(err);
+    }
 
-    };
+    return {
+        details: details,
+        characters: characters
+    }
+}
 
-    useEffect(() => {
-        loadDetails();
-    }, [])
-
+export default function Id({ characters, details }) {
     return (
         <DetailsView>
             <Header />
