@@ -10,6 +10,8 @@ export const DetailsView = styled.div`
     align-items: center;
     flex-wrap: wrap;
 
+    margin-bottom: 7em;
+
     #header {
         display: flex;
 

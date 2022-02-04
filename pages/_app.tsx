@@ -7,6 +7,7 @@ import NProgress from 'nprogress'
 import '../src/styles/nprogress/nprogress.css'
 
 import Head from 'next/head'
+import Footer from 'src/components/footer/footer.ts';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -37,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="viewport-fit=cover" />
       </Head>
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }

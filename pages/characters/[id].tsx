@@ -37,8 +37,6 @@ Id.getInitialProps = async function ({req, query: {id}}) {
 }
 
 export default function Id({ series, details }) {
-    console.log(series)
-
     return (
             <>
             <Header />
