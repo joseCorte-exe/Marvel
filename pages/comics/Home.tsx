@@ -4,8 +4,6 @@ import { api } from '../../src/infra/services/api';
 
 import { ComicsView } from '../../src/styles/layouts/cards/style';
 
-import Header from '../../src/components/header/Header';
-
 Home.getInitialProps = async function ({req, query: {id}}) {
     
     let catalog = [];

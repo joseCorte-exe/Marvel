@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { FaBell, FaSearch } from 'react-icons/fa';
 
-import { HeaderView } from './style.ts'
+import { HeaderView } from './style'
 import Link from 'next/link';
 import SignInButton from '../signInButton/SingInButton';
 

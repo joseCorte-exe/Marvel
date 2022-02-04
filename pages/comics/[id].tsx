@@ -3,7 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 
 import { api } from '../../src/infra/services/api';
-import Header from '../../src/components/header/Header';
 
 import { DetailsView } from '../../src/styles/layouts/details/style';
 import Card from '../../src/components/card/Card';

@@ -1,9 +1,8 @@
 import React from 'react';
 
 import Image from 'next/image';
-import { title } from 'process';
 
-import { CardView } from './style.ts'
+import { CardView } from './style'
 import Link from 'next/link';
 
 export default function Card({image, type, title, creators, id, route}) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HomeView } from 'src/styles/home/style.ts';
+import { HomeView } from 'src/styles/home/style';
 
 export default function Home() {
 

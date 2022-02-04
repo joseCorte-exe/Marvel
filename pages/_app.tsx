@@ -1,5 +1,4 @@
 import '../src/styles/globals.css'
-import { AppProps } from 'next/app';
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
