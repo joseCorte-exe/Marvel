@@ -24,7 +24,6 @@ Home.getInitialProps = async function ({req, query: {id}}) {
 export default function Home({catalog}) {
     return (
         <>
-            <Header />
             <ComicsView>
                 <h3>Comics</h3>
                 <section>

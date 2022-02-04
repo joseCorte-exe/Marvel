@@ -9,7 +9,13 @@ import '../src/styles/nprogress/nprogress.css'
 import Head from 'next/head'
 import Footer from 'src/components/footer/footer.ts';
 
-function MyApp({ Component, pageProps }: AppProps) {
+import { SessionProvider } from "next-auth/react"
+import Header from 'src/components/header/Header.ts';
+
+function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   const router = useRouter()
 
   useEffect(() => {
@@ -33,13 +39,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router])
 
   return (
-    <>
+    <SessionProvider session={session}>
       <Head>
         <meta name="viewport" content="viewport-fit=cover" />
-      </Head>
-      <Component {...pageProps} />
+        </Head>
+        <Header />
+        <Component {...pageProps} />
       <Footer />
-    </>
+    </SessionProvider>
   )
 }
 

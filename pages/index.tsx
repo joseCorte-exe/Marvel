@@ -1,18 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css';
+import React from 'react';
 
-import React, { useEffect, useState } from 'react';
-
-import axios from 'axios';
-import Link from 'next/link';
+import { HomeView } from 'src/styles/home/style.ts';
 
 export default function Home() {
+
     return (
-        <>
-        <Link href='/comics/Home' >
-            <Image src='/images/Marvel_Logo.svg' width={100} height={100} />
-        </Link>
-        </>
+        <HomeView>
+            <p>olá!! este é um projeto em next que consome a api da marvel para listar algumas revistas, personagens e seus detalhes, demorei um pouco mais que pretendia para fazer, pois me deu um pouquinho de trabalho a mais que imaginava... mas mesmo assim este projeto foi feito para tentar aplicação em uma vaga, mas no futuro pretendo melhorar...</p>
+            <p>Espero que gostem. &#128526;</p>
+            <h6><strong>clique em algum item na barra de navegação para começar a desbravar o site</strong></h6>
+            <h6><i>divirtase</i></h6>
+        </HomeView>
     )
 }

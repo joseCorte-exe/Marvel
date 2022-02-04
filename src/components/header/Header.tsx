@@ -6,6 +6,7 @@ import { FaBell, FaSearch } from 'react-icons/fa';
 
 import { HeaderView } from './style.ts'
 import Link from 'next/link';
+import SignInButton from '../signInButton/SingInButton';
 
 export default function Header() {
   return (
@@ -22,7 +23,7 @@ export default function Header() {
                 <FaSearch className='icons' />
                 <FaBell className='icons' />
             </article>
-            <Image src='https://avatars.githubusercontent.com/u/79228713?v=4' width={60} height={60} />
+            <SignInButton />
         </section>
     </HeaderView>
   );

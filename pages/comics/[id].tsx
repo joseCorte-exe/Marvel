@@ -44,7 +44,6 @@ Id.getInitialProps = async function ({req, query: {id}}) {
 export default function Id({ characters, details }) {
     return (
             <>
-            <Header />
             <DetailsView>
                 <section id='header' >
                     <div id='panel'>
