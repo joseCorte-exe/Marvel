@@ -10,7 +10,7 @@ Home.getInitialProps = async function ({req, query: {id}}) {
     
     let catalog = [];
 
-    await api.get('comics?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3')
+    await api.get('characters?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3')
         .then(res => catalog = res.data.data.results)
         .catch(err => (
             console.log(err)
@@ -30,8 +30,8 @@ export default function Home({catalog}) {
                 <section>
                     {
                         catalog.map(value => <Card key={value.id} id={value.id} image={value.thumbnail.path}
-                            type={value.type} title={value.title}
-                            creators={value.creators.items.map(value => (value.name))} route={`/comics/${value.id}`}/> )
+                            type={"Character"} title={value.name}
+                            creators={"Marvel"} route={`/characters/${value.id}`}/> )
                         
                     }
                 </section>

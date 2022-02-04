@@ -14,7 +14,7 @@ Id.getInitialProps = async function ({req, query: {id}}) {
     let characters = [];
 
     try {
-        await api.get(`comics/${id}?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3`)
+        await api.get(`series/${id}?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3`)
             .then(res => details = {
                 id: res.data.data.results[0].id,
                 title: res.data.data.results[0].title,
@@ -27,7 +27,7 @@ Id.getInitialProps = async function ({req, query: {id}}) {
                 console.log(err)
             ))
 
-        await api.get(`comics/${id}/characters?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3`)
+        await api.get(`series/${id}/characters?ts=1643487890&apikey=ff71f49761fb6a07a7b94a1fe4a112d3&hash=fcf44c5101f8b675183d3f9a00b437c3`)
             .then(res => characters = res.data.data.results)
             .catch(err => (
                 console.log(err)
