@@ -28,7 +28,7 @@ export default function Home({catalog}) {
                     {
                         catalog.map(value => <Card key={value.id} id={value.id} image={value.thumbnail.path}
                             type={value.type} title={value.title}
-                            creators={value.creators.items.map(value => (value.name))} route={`/comics/${value.id}`}/> )
+                            creators={value.creators.items.map(value => (value.name))} route={`/comics/details/${value.id}`}/> )
                         
                     }
                 </section>

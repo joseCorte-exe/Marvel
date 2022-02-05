@@ -28,7 +28,7 @@ export default function Home({catalog}) {
                     {
                         catalog.map(value => <Card key={value.id} id={value.id} image={value.thumbnail.path}
                             type={"Character"} title={value.name}
-                            creators={"Marvel"} route={`/characters/${value.id}`}/> )
+                            creators={"Marvel"} route={`/characters/details/${value.id}`}/> )
                     }
                 </section>
                 <footer>

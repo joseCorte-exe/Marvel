@@ -2,10 +2,10 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import { api } from '../../src/infra/services/api';
+import { api } from '../../../src/infra/services/api';
 
-import { DetailsView } from '../../src/styles/layouts/details/style';
-import Card from '../../src/components/card/Card';
+import { DetailsView } from '../../../src/styles/layouts/details/style';
+import Card from '../../../src/components/card/Card';
 
 Id.getInitialProps = async function ({req, query: {id}}) {
 
