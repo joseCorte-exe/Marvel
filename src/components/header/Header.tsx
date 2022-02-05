@@ -13,10 +13,10 @@ export default function Header() {
     <HeaderView>
         <Image src='/images/Marvel_Logo.svg' width={120} height={120} />
         <ul>
-            <Link href={'/comics/home'}  >Comics</Link>
-            <Link href={'/series/home'} >Series</Link>
-            <Link href={'/characters/home'} >Characters</Link>
-            <Link href={'/events/home'} >Events</Link>
+            <Link href={'/Comics/home'}  >Comics</Link>
+            <Link href={'/Series/home'} >Series</Link>
+            <Link href={'/Characters/home'} >Characters</Link>
+            <Link href={'/Events/home'} >Events</Link>
         </ul>
         <section>
             <article>
